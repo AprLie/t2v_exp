@@ -35,7 +35,7 @@ json中元素的形式为 "params_name":{"_type":"","_value":[]}
 ```
 #### 2.定义配置文件
 https://nni.readthedocs.io/zh/latest/Tutorial/ExperimentConfig.html 中有内置的模板,注意
-trial中的gpuNum表示跑一个trial需要多少个gpu,而不是gpuid,设置错误容易变为单trial
+trial中的gpuNum表示跑一个trial需要多少个gpu,而不是gpuid,设置错误容易变为单trial  
 例:(主要修改searchSpacePath和trial的command)
 ```yaml
 authorName: xu
@@ -62,7 +62,7 @@ trial:
 ```
 
 #### 3.修改python代码
-3-4行可解决
+3-4行可解决  
 1>引入NNI
 ```python
 import nni
@@ -72,11 +72,11 @@ import nni
 params = nni.get_next_parameter()
 run(params)
 ```
-3>给nni report关注的指标(testset上的)
+3>给nni report关注的指标(test set上)
 ```py
 nni.report_final_result(accuracy_score(y_test, pred))
 ```
-同时可以在每个epoch里报告即时的指标情况,
+(可选)可以在每个epoch里报告即时的指标情况
 ```py
 nni.report_intermediate_result(metrics)
 ```
@@ -85,4 +85,4 @@ nni.report_intermediate_result(metrics)
 nnictl create --config xxx.yaml --port 12345
 ```
 
-然后可在命令行弹出的网页地址中查看结果;如果是服务器端训练则url为 服务器ip:port
+之后可在命令行弹出的网页地址中查看结果;如果是服务器端训练则url为 服务器ip:port
