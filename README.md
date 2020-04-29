@@ -85,4 +85,17 @@ nni.report_intermediate_result(metrics)
 nnictl create --config xxx.yaml --port 12345
 ```
 
-之后可在命令行弹出的网页地址中查看结果;如果是服务器端训练则url为 服务器ip:port
+之后可在命令行弹出的网页地址中查看结果;如果是服务器端训练则url为 服务器ip:port  
+
+
+注:  
+1.在保证原有代码可正确运行的情况下再进行NNI调参,否则NNI中报错较难查看.  
+2.在获取trial的Logpath(单击trial即可见)后,查看logpath下的strerr文件可获取报错信息,在trial.log可获取python输出信息,在parameter.cfg可获取参数信息(在web url有效时直接点击更便捷)  
+3.在trial状态多数为失败时(或其他场景),需要停止实验,当有多个nni同时运行时,可通过  
+```
+nnictl stop --port portvalue
+```
+停止运行,这比复制粘贴experiment id更快.  
+4.在实验中可以修改搜索空间,concurrency等,详见https://nni.readthedocs.io/zh/latest/Tutorial/Nnictl.html#update  
+
+
