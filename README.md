@@ -3,7 +3,7 @@ experiment results:
 |baseline|indexname|index|valuename|aggregation|F1 score|  
 |-|-|-|-|-|-|
 |CART|0.694|	0.775|	0.573|	0.600|	0.946|  
-|random forest|	0.73|	0.79|	0.7|	0.68|	0.95|  
+|random forest|	0.728|	0.790|	0.704|	0.676|	0.947|  
 |svm_rbf|	0.689|	0.706|	0.633	|0.684|	0.935|  
 |gbdt|	0.692|	0.805|	0.636	|0.617	|0.951|  
 |xgboost|	0.726|	0.79|	0.677|	0.664|	0.948|  
