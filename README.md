@@ -16,10 +16,10 @@ python3 -m pip install --upgrade nni
 ```
 
 ### 使用方式
-1.定义搜索空间 search_space.json
-2.定义配置文件 config.yaml
-3.修改python代码
-4.启动NNI
+1.定义搜索空间 search_space.json  
+2.定义配置文件 config.yaml  
+3.修改python代码  
+4.启动NNI  
 
 #### 1.定义搜索空间
 json中元素的形式为 "params_name":{"_type":"","_value":[]}
@@ -80,7 +80,7 @@ nni.report_final_result(accuracy_score(y_test, pred))
 ```py
 nni.report_intermediate_result(metrics)
 ```
-4.启动NNI
+#### 4.启动NNI
 ```
 nnictl create --config xxx.yaml --port 12345
 ```
