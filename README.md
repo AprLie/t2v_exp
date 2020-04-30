@@ -3,10 +3,19 @@ experiment results:
 |baseline|indexname|index|valuename|aggregation|F1 score|  
 |-|-|-|-|-|-|
 |CART|0.694|	0.775|	0.573|	0.600|	0.946|  
-|random forest|	0.728|	0.790|	0.704|	0.676|	0.947|  
+|random forest|0.728|	0.790|	0.704|	0.676|	0.947|  
 |svm_rbf|	0.689|	0.706|	0.633	|0.684|	0.935|  
 |gbdt|	0.692|	0.805|	0.636	|0.617	|0.951|  
 |xgboost|	0.726|	0.79|	0.677|	0.664|	0.948|  
+
+default params:
+|baseline|indexname|index|valuename|aggregation|F1 score|  
+|-|-|-|-|-|-|
+|CART|0.422|	0.744|	0.533|	0.288|	0.928|  
+|random forest|	0.668|	0.742|	0.629|	0.635|	0.937|  
+|svm_rbf|	|	|		||	|  
+|gbdt|	0.420|	0.789|	0.639	|0.516	|0.945|  
+|xgboost|	0.705|	0.780|	0.640|	0.664|	0.944|  
 
 ## NNI使用
 详细可参阅https://nni.readthedocs.io/zh/latest/Tutorial/QuickStart.html
