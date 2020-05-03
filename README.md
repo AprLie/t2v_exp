@@ -105,6 +105,17 @@ nnictl create --config xxx.yaml --port 12345
 nnictl stop --port portvalue
 ```
 停止运行,这比复制粘贴experiment id更快.  
-4.在实验中可以修改搜索空间,concurrency等,详见https://nni.readthedocs.io/zh/latest/Tutorial/Nnictl.html#update  
+4.在实验中可以修改搜索空间,concurrency等,详见https://nni.readthedocs.io/zh/latest/Tutorial/Nnictl.html#update    
+5.暂不支持改变环境后继续resume原实验,有需求可以用docker.  
+6.TPE tuner前20个点是随机的,因此trial数要＞20.  
+7.一直在waiting:可以无视gpu上正在运行的进程而运行trial,避免等待;
+```yaml
+trainingServicePlatform: local
+localConfig:
+    maxTrialNumPerGpu:20
+    useActiveGpu:True
+```
+实现一卡多trial.
+8.utilization不高且显存充足的情况下,单卡并行跑多trial一般会有收益.
 
 
