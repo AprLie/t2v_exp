@@ -1,4 +1,13 @@
 # t2v_exp
+[*] update(new dataset split method):
+|baseline|indexname|index|valuename|aggregation|F1 score|path|  
+|-|-|-|-|-|-|-|
+|CART           |0.489|	0.755|	0.551|	0.345|	0.951|  /home/ludu/nni/experiments/Nx1uaOG8/trials/xXqDI
+|random forest  |0.618|	0.823|	0.637|	0.577|	0.965|  /home/ludu/nni/experiments/Ewz2q23k/trials/AVPk9
+|svm_rbf        |0.689|	0.706|	0.633|  0.684|	0.935|  
+|gbdt           |0.606|	0.826|	0.650|  0.574|  0.966|  /home/ludu/nni/experiments/aCxlK9e9/trials/EhZzf
+|xgboost        |0.649|	0.836|	0.645|	0.576|	0.967|  /home/ludu/nni/experiments/Bnc0ZVql/trials/VsAY4
+
 experiment results:  
 |baseline|indexname|index|valuename|aggregation|F1 score|  
 |-|-|-|-|-|-|
