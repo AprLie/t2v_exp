@@ -1,5 +1,15 @@
 # t2v_exp
-[*] update(new dataset split method):
+update(new dataset split method):
+default params:
+|baseline|indexname|index|valuename|aggregation|F1 score|  
+|-|-|-|-|-|-|
+|CART           |0.480|	0.745|	0.539|	0.272|	0.949|  
+|random forest  |0.576|	0.802|	0.560|	0.543|	0.960|  
+|svm_rbf        |0.416|	0.737|	0.529|  0.535|	0.942|  
+|gbdt           |0.511|	0.766|	0.593|  0.507|  0.956|  
+|xgboost        |0.632|	0.835|	0.602|	0.545|	0.966|  
+
+
 |baseline|indexname|index|valuename|aggregation|F1 score|path|  
 |-|-|-|-|-|-|-|
 |CART           |0.489|	0.755|	0.551|	0.345|	0.951|  /home/ludu/nni/experiments/Nx1uaOG8/trials/xXqDI
