@@ -20,6 +20,7 @@ default params:
 |svm_rbf        |0.416|	0.737|	0.529|  0.535|	0.942|  
 |gbdt           |0.511|	0.766|	0.593|  0.507|  0.956|  
 |xgboost        |0.632|	0.835|	0.602|	0.545|	0.966|  
+|NN             |0.000|	0.506|	0.000|	0.036|	0.889| 
 
 nni:  
 |baseline|indexname|index|valuename|aggregation|F1 score|path|  
