@@ -1,13 +1,14 @@
 # t2v_exp
 update(small300):  
 default params:  
-|baseline|indexname|index|valuename|aggregation|F1 score|  
+|baseline|indexname|index|valuename|aggregation|F1 score|macro-F1  
 |-|-|-|-|-|-|
 |CART           |0.504|	0.907|	0.593|	0.467|	0.973|  
 |random forest  |0.568|	0.879|	0.600|	0.596|	0.967|  
 |svm_rbf        |0.449|	0.844|	0.543|  0.582|	0.956|  
 |gbdt           |0.526|	0.934|	0.673|  0.549|  0.981|  
 |xgboost        |0.644|	0.932|	0.670|	0.574|	0.981|  
+|icdm           |0.554|	0.744|	0.605|	0.340|	0.943| 0.644|  
 
 
 
