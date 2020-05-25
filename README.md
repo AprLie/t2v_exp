@@ -1,4 +1,22 @@
 # t2v_exp
+table cell
+default params:  
+|baseline|indexname|index|valuename|aggregation|F1 score|macro-F1|
+|-|-|-|-|-|-|-|
+|CART           |0.493|	0.705|	0.530|	0.338|	0.925|  0.606|
+|random forest  |0.596|	0.786|	0.641|	0.542|	0.945|  0.708|
+|svm_rbf        |0.432|	0.746|	0.494|  0.531|	0.933|  0.634|
+|gbdt           |0.456|	0.789|	0.590|  0.470|  0.945|  0.656|
+|xgboost        |0.624|	0.793|	0.621|	0.509|	0.947|  0.705|
+|ICDM_bert+fe   |0.598| 0.714|  0.566|  0.560|  0.930|  0.681|
+|ICDM_all       |0.605| 0.792|  0.699|  0.625|  0.949|  0.740|
+
+
+
+
+
+
+
 update(small300):  
 default params:  
 |baseline|indexname|index|valuename|aggregation|F1 score|macro-F1|  
@@ -16,7 +34,7 @@ default params:
 default params:  
 |baseline|indexname|index|valuename|aggregation|F1 score|macro-F1|
 |-|-|-|-|-|-|-|
-|CART           |0.480|	0.745|	0.539|	0.272|	0.949|  |
+|CART           |0.493|	0.705|	0.530|	0.338|	0.925| 0.606|
 |random forest  |0.576|	0.802|	0.560|	0.543|	0.960|  |
 |svm_rbf        |0.416|	0.737|	0.529|  0.535|	0.942|  |
 |gbdt           |0.511|	0.766|	0.593|  0.507|  0.956|  |
