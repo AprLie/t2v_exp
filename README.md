@@ -1,5 +1,23 @@
 # t2v_exp
-table cell
+## table region: row    
+default params:
+|baseline|header|not|F1 score|macro-F1|
+|-|-|-|-|-|
+|CART           |0.777|	0.991|	0.983|	0.884|	
+|random forest  |0.807|	0.993|	0.987|	0.900|
+|svm_rbf        |0.777|	0.992|	0.985|  0.885|
+|gbdt           |0.862|	0.995|	0.990|  0.928| 
+|xgboost        |0.849|	0.995|	0.990|	0.922|
+## table region: col
+default params:
+|baseline|header|not|F1 score|macro-F1|
+|-|-|-|-|-|
+|CART           |0.797|	0.974|	0.954|	0.886|	
+|random forest  |0.845|	0.981|	0.967|	0.913|	
+|svm_rbf        |0.808|	0.977|	0.959|  0.893|	
+|gbdt           |0.856|	0.982|	0.967|  0.919| 
+|xgboost        |0.859|	0.982|	0.968|	0.920|	
+## table cell  
 default params:  
 |baseline|indexname|index|valuename|aggregation|F1 score|macro-F1|
 |-|-|-|-|-|-|-|
@@ -16,7 +34,7 @@ default params:
 
 
 
-
+## delete
 
 update(small300):  
 default params:  
