@@ -1,4 +1,39 @@
 # t2v_exp
+## final ver
+### table cell
+|baseline       |indexname|index|valuename|aggregation|other|F1 score|macro-F1|
+|-|-|-|-|-|-|-|-|
+|CART           |0.422|	0.827|	0.524|	0.375|	0.985|  0.956|  0.627|
+|random forest  |0.559|	0.847|	0.628|	0.581|	0.985|  0.962|  0.720|
+|svm_rbf        |0.407|	0.748|	0.545|  0.597|	0.972|  0.939|  0.654|
+|gbdt           |0.499|	0.884|	0.612|  0.521|  0.990|  0.970|  0.701|
+|xgboost        |0.618|	0.885|	0.612|	0.551|	0.990|  0.971|  0.731|
+|pixel-cnn      |0.468| 0.747|  0.613|  0.570|  0.939|  0.674|
+|fcn            |0.534| 0.773|  0.644|  0.584|  0.946|  0.702|
+|ICDM_bert+fe   |0.598| 0.714|  0.566|  0.560|  0.930|  0.681|
+|ICDM_all       |0.601| 0.804|  0.689|  0.630|  0.949|  0.740|
+|ICDM_all_test  |0.617| 0.789|  0.662|  0.553|  0.942|  0.719|
+
+### table region:col
+|baseline|header|not|F1 score|macro-F1|
+|-|-|-|-|-|
+|CART           |0.881|	0.983|	0.970|	0.932|	
+|random forest  |0.922|	0.989|	0.981|	0.955|	
+|svm_rbf        |0.860|	0.980|	0.965|  0.920|	
+|gbdt           |0.898|	0.985|	0.974|  0.942| 
+|xgboost        |0.890|	0.984|	0.972|	0.937|	
+
+### table region:row
+|baseline|header|not|F1 score|macro-F1|
+|-|-|-|-|-|
+|CART           |0.874|	0.994|	0.989|	0.934|	
+|random forest  |0.902|	0.996|	0.992|	0.949|
+|svm_rbf        |0.850|	0.994|	0.988|  0.922|
+|gbdt           |0.914|	0.996|	0.993|  0.955| 
+|xgboost        |0.995|	0.883|	0.990|	0.939|
+
+
+
 ## table region: row    
 default params:
 |baseline|header|not|F1 score|macro-F1|
