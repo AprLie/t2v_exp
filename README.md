@@ -151,7 +151,8 @@ json中元素的形式为 "params_name":{"_type":"","_value":[]}
     "max_iter":{"_type":"choice","_value":[-1]},
     "gpu":{"_type":"choice","_value":[0,1,2,3]}
 }
-```
+```  
+注:搜索空间可以是嵌套的,即"value"内可以依旧是子搜索空间
 #### 2.定义配置文件
 https://nni.readthedocs.io/zh/latest/Tutorial/ExperimentConfig.html 中有内置的模板,注意
 trial中的gpuNum表示跑一个trial需要多少个gpu,而不是gpuid,设置错误容易变为单trial  
@@ -167,6 +168,8 @@ trainingServicePlatform: local
 searchSpacePath: svm.json
 useAnnotation: false
 multiThread: True
+# nni的log的存放地址,建议放在较大的盘内,避免占满硬盘空间后,web上会有两类报错:1.直接显示disk full error; 2.web 加载不出,显示 request failed xxx, code 500
+logDir: /users/xu/nni
 tuner:
   builtinTunerName: TPE
   classArgs:
@@ -178,6 +181,13 @@ trial:
   command: python3 ../src/svm_emsemble.py
   codeDir: .
   gpuNum: 1
+localConfig:
+# gpuIndices为允许调度的gpu的编号(nvidia-smi后显示的gpu id);
+# maxTrialNumPerGpu为每块gpu最多同时跑多少个trial;注意,当trialConcurrency>maxTrialNumPerGpu时,其分配方式为按照gpuindices的顺序依次把maxTrialNumPerGpu个trial跑满,而不是平均分配到len(gpuindices)个gpu上;
+# useActiveGpu:当gpu已经有任务在跑的时候,是否允许开新的trial
+  gpuIndices: 0,1,2,3
+  maxTrialNumPerGpu: 24
+  useActiveGpu: True
 ```
 
 #### 3.修改python代码
@@ -216,6 +226,13 @@ nnictl stop --port portvalue
 ```
 停止运行,这比复制粘贴experiment id更快.  
 4.在实验中可以修改搜索空间,concurrency等,详见https://nni.readthedocs.io/zh/latest/Tutorial/Nnictl.html#update    
+建议在跑一定数量的trial,在web上根据top 20%下hyper-parameter的分布来调整自己的搜索空间,然后可以直接
+```
+nnictl update searchspace [expid] -f filepath
+```  
+而不必新开一个nni实验,这样旧实验可以继承原有的调参经验,在新的更小的空间内搜索  
+同时,不确定哪些参数后期会不会变动时候,可以把他们也写到搜索空间内,只是choice变为只有一个,不影响代码结果;这样要把定参数变为可调参数时只需要重新定义搜索空间即可  
+
 5.暂不支持改变环境后继续resume原实验,有需求可以用docker.  
 6.TPE tuner前20个点是随机的,因此trial数要＞20.  
 7.一直在waiting:可以无视gpu上正在运行的进程而运行trial,避免等待;
