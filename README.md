@@ -174,6 +174,7 @@ tuner:
   builtinTunerName: TPE
   classArgs:
     optimize_mode: maximize
+    # 使用单显卡时使用方式为"0",所有出现gpuIndices的地方需要统一
   gpuIndices: 0,1,2,3
 
 # 运行的命令，以及 Trial 代码的路径
